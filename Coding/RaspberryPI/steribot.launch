@@ -1,0 +1,28 @@
+<launch>
+    <!-- Start rosserial_python serial_node.py -->
+    <node name="serial_node" pkg="rosserial_python" type="serial_node.py" />
+
+    <!-- Load the delay parameter -->
+    <rosparam command="load" file="$(find design2)/config/delay.yaml" />
+
+    <!-- Start GUI_Server.py -->
+    <node name="GUI_Server" pkg="design2" type="GUI_Server.py" />
+
+    <!-- Load the delay parameter -->
+    <rosparam command="load" file="$(find design2)/config/delay.yaml" />
+
+    <!-- Start aruco_publisher.py -->
+    <node name="aruco_publisher" pkg="design2" type="aruco_publisher.py" />
+
+    <!-- Load the delay parameter -->
+    <rosparam command="load" file="$(find design2)/config/delay.yaml" />
+
+    <!-- Start uvLightTest.py -->
+    <node name="uvLightTest" pkg="design2" type="uvLightTest.py" />
+
+    <!-- Load the delay parameter -->
+    <rosparam command="load" file="$(find design2)/config/delay.yaml" />
+
+    <!-- Start rosserial_python serial_node2.py -->
+    <node name="serial_node2" pkg="rosserial_python" type="serial_node2.py" />
+</launch>
